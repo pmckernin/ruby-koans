@@ -14,6 +14,23 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+	hyp, s1, s2 = if c > a || c > b
+    [c,a,b]
+  elsif b > a || b > c
+    [b,a,c]
+  else
+    [a,b,c]
+  end
+
+if a <= 0 || b <= 0 || c <= 0
+raise TriangleError
+elsif s1 + s2 <= hyp
+raise TriangleError
+end
+
+
+
+
   if a == b and b == c and a == c
     return :equilateral
   elsif a == b or b == c or a == c 
