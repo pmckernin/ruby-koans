@@ -164,12 +164,12 @@ class AboutClasses < Neo::Koan
 
   def test_to_s_provides_a_string_version_of_the_object
     fido = Dog7.new("Fido")
-    assert_equal "<Dog(name=Fido)>", fido.to_s
+    assert_equal "Fido", fido.to_s
   end
 
   def test_to_s_is_used_in_string_interpolation
     fido = Dog7.new("Fido")
-    assert_equal "My dog is <Dog(name=Fido)>", "My dog is #{fido}"
+    assert_equal "My dog is Fido", "My dog is #{fido}"
   end
 
   def test_inspect_provides_a_more_complete_string_version
@@ -180,7 +180,7 @@ class AboutClasses < Neo::Koan
   def test_all_objects_support_to_s_and_inspect
     array = [1,2,3]
 
-    assert_equal "123", array.to_s
+    assert_equal "[1, 2, 3]", array.to_s
     assert_equal "[1, 2, 3]", array.inspect
 
     assert_equal "STRING", "STRING".to_s
